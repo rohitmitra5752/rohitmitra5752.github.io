@@ -32,18 +32,38 @@
 		<!-- Navigation Menu Element -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container-fluid">
+				<!-- Navbar Header -->
 				<div class="navbar-header">
+					<!-- Hamburger Icon -->
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topMenuCollapse">
 						<span class="glyphicon glyphicon-menu-hamburger"></span>
 					</button>
 					<a class="navbar-brand">Home</a>
 				</div>
+				<!-- Navbar collapsible region -->
 				<div class="collapse navbar-collapse" id="topMenuCollapse">
 					<div class="navbar-right">
+						<!-- Day/Night Switcher -->
+						<!-- TODO: Need to move it to reusable jQuery component -->
 						<div class="dayNightSwitcher" id="dayNightSwitcher">
-							<input type="checkbox" id="dnSwitcherBox" class="dnSwitcherBox" />
-							<div class="sky"></div>
-							<div class="sun"></div>
+							<!-- Icon switcher with sun and moon -->
+							<div class="dayNightIconSwitcher hidden-xs">
+								<input type="checkbox" class="dnSwitcherBox" />
+								<div class="sky"></div>
+								<div class="sun"></div>
+								<div class="stars">
+									<div class="star"></div>
+									<div class="star"></div>
+									<div class="star"></div>
+									<div class="star"></div>
+								</div>
+							</div>
+							<!-- Text Switcher for mobile scenarios -->
+							<div class="dayNightTextSwitcher hidden-lg hidden-md hidden-sm">
+								<button class="button dayButton">Day</button>
+                              	<button class="button  nightButton">Night</button>
+  								<div class="slider"></div>
+							</div>
 						</div>
 					</div>
 				</div>

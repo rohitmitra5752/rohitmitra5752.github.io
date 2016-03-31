@@ -12,15 +12,24 @@ body.night {
 	color: #EFEFEF;
 }
 
+.navbar-header .glyphicon.glyphicon-menu-hamburger {
+	color: #999999;
+}
+
 /* Day Night Switcher Styles */
 
 .dayNightSwitcher {
 	width: 100px;
 	height: 50px;
+}
+
+.dayNightSwitcher .dayNightIconSwitcher {
+	height: 100%;
+	width: 100%;
 	position: relative;
 }
 
-.dayNightSwitcher .dnSwitcherBox {
+.dayNightSwitcher .dayNightIconSwitcher .dnSwitcherBox {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -31,7 +40,7 @@ body.night {
 	z-index: 2;
 }
 
-.dayNightSwitcher .dnSwitcherBox ~ .sky {
+.dayNightSwitcher .dayNightIconSwitcher .dnSwitcherBox ~ .sky {
 	background-color: #C0E6F6;
 	border: 4px #81C0D5 solid;
 	border-radius: 40px;
@@ -40,12 +49,12 @@ body.night {
 	transition: all ease-in 0.5s;
 }
 
-.dayNightSwitcher .dnSwitcherBox:checked ~ .sky {
+.dayNightSwitcher .dayNightIconSwitcher .dnSwitcherBox:checked ~ .sky {
 	background-color: #484848;
 	border-color: #202020;
 }
 
-.dayNightSwitcher .dnSwitcherBox ~ .sun {
+.dayNightSwitcher .dayNightIconSwitcher .dnSwitcherBox ~ .sun {
 	height: 40px;
     width: 40px;
     position: absolute;
@@ -55,10 +64,130 @@ body.night {
 	border: 4px #E4C74D solid;
     border-radius: 50%;
 	transition: all ease-in 0.5s;
+	box-shadow: #E4C74D 0 0 10px 2px;
 }
 
-.dayNightSwitcher .dnSwitcherBox:checked ~ .sun {
+.dayNightSwitcher .dayNightIconSwitcher .dnSwitcherBox:checked ~ .sun {
 	background-color: #FFFDF2;
 	border-color: #DEE1C5;
 	left: 10px;
+	box-shadow: #DEE1C5 0 0 5px 1px;
+}
+
+.dayNightSwitcher .dayNightIconSwitcher .dnSwitcherBox ~ .stars {
+	transform: scale(0);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all ease-in 0.5s;
+}
+
+.dayNightSwitcher .dayNightIconSwitcher .dnSwitcherBox ~ .stars .star {
+	width: 10px;
+	height: 10px;
+	background: #E6E3D2;
+	position: absolute;
+	border-radius: 50%;
+	animation-name: glowingStars;
+	animation-iteration-count: infinite;
+}
+
+.dayNightSwitcher .dayNightIconSwitcher .dnSwitcherBox ~ .stars .star:nth-child(1) {
+	left: 55px;
+	top: 10px;
+	animation-duration: 1000ms;
+}
+
+.dayNightSwitcher .dayNightIconSwitcher .dnSwitcherBox ~ .stars .star:nth-child(2) {
+	width: 16px;
+	height: 16px;
+	left: 70px;
+	top: 25px;
+	animation-duration: 667ms;
+}
+
+.dayNightSwitcher .dayNightIconSwitcher .dnSwitcherBox ~ .stars .star:nth-child(3) {
+	background-color: #DEE1C5;
+	animation:none;
+	left: 20px;
+	top: 20px;
+}
+
+.dayNightSwitcher .dayNightIconSwitcher .dnSwitcherBox ~ .stars .star:nth-child(4) {
+	width: 5px;
+	height: 5px;
+	top: 35px;
+	left: 50px;
+	animation-duration: 1167ms;
+}
+
+.dayNightSwitcher .dayNightIconSwitcher .dnSwitcherBox:checked ~ .stars {
+	transform: scale(1);
+}
+
+.dayNightSwitcher .dayNightTextSwitcher {
+	height: 100%;
+	display: flex;
+	position: relative;
+	padding: 0 2px;
+}
+
+.dayNightSwitcher .dayNightTextSwitcher .button {
+	height: 100%;
+	width: 50%;
+}
+
+.dayNightTextSwitcher .button.dayButton {
+	border-radius: 25% 0 0 25%;
+	border-style: solid;
+	background-color: #C0E6F6;
+	border-color: #81C0D5;
+	color: #121212;
+	border-width: 1px 0px 1px 1px;
+}
+
+.dayNightTextSwitcher .button.nightButton {
+	border-radius: 0 25% 25% 0;
+	border-style: solid;
+	background-color: #484848;
+	border-color: #202020;
+	color: #FFFDF2;
+	border-width: 1px 1px 1px 0px;
+}
+
+.dayNightTextSwitcher .slider {
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	background-color: #C0E6F6;
+	top: 0;
+	left: 50px;
+	transition: all ease-in 0.5s;
+	border-radius: 0 25% 25% 0;
+	border-color: #81C0D5;
+	border-width: 1px 1px 1px 0;
+	border-style: solid;
+}
+
+.dayNightSwitcher .dayNightTextSwitcher.hideDay .slider {
+	left: 0;
+    border-radius: 25% 0 0 25%;
+    background-color: #484848;
+    border-color: #202020;
+	border-width: 1px 0 1px 1px;
+}
+
+@keyframes glowingStars {
+	0% {
+		box-shadow: #E6E3D2 0 0 2px 1px;
+	}
+	50% {
+		box-shadow: #E6E3D2 0 0 2px 0;
+		background-color: white;
+	}
+	100% {
+		box-shadow: #E6E3D2 0 0 2px 1px;
+	}
 }
