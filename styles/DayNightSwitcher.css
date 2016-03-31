@@ -1,0 +1,64 @@
+body {
+	transition: background-color ease-in 0.5s;
+}
+
+body.day {
+	background-color: #EFEFEF;
+	color: #999999;
+}
+
+body.night {
+	background-color: #999999;
+	color: #EFEFEF;
+}
+
+/* Day Night Switcher Styles */
+
+.dayNightSwitcher {
+	width: 100px;
+	height: 50px;
+	position: relative;
+}
+
+.dayNightSwitcher .dnSwitcherBox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	opacity: 0;
+	z-index: 2;
+}
+
+.dayNightSwitcher .dnSwitcherBox ~ .sky {
+	background-color: #C0E6F6;
+	border: 4px #81C0D5 solid;
+	border-radius: 40px;
+	height: 100%;
+	width: 100%;
+	transition: all ease-in 0.5s;
+}
+
+.dayNightSwitcher .dnSwitcherBox:checked ~ .sky {
+	background-color: #484848;
+	border-color: #202020;
+}
+
+.dayNightSwitcher .dnSwitcherBox ~ .sun {
+	height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 5px;
+    left: 50px;
+    background: #F5EB42;
+	border: 4px #E4C74D solid;
+    border-radius: 50%;
+	transition: all ease-in 0.5s;
+}
+
+.dayNightSwitcher .dnSwitcherBox:checked ~ .sun {
+	background-color: #FFFDF2;
+	border-color: #DEE1C5;
+	left: 10px;
+}

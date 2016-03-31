@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0;">
+		<script   src="https://code.jquery.com/jquery-2.2.2.js"   integrity="sha256-4/zUCqiq0kqxhZIyp4G0Gk+AOtCJsY1TA00k5ClsZYE="   crossorigin="anonymous"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="/scripts/DayNightSwitcher.js" ></script>
+		<script type="text/javascript" src="/styles/DayNightSwitcher.css" ></script>
+	</head>
+
+	<body class='day'>
+		<!-- Navigation Menu Element -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topMenuCollapse">
+						<span class="glyphicon glyphicon-menu-hamburger"></span>
+					</button>
+					<a class="navbar-brand">Home</a>
+				</div>
+				<div class="collapse navbar-collapse" id="topMenuCollapse">
+					<div class="navbar-right">
+						<div class="dayNightSwitcher" id="dayNightSwitcher">
+							<input type="checkbox" id="dnSwitcherBox" class="dnSwitcherBox" />
+							<div class="sky"></div>
+							<div class="sun"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</body>
+</html>
